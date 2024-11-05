@@ -1,0 +1,23 @@
+--Return all the candidate IDs that have problem solving skills, SQL experience, knows Python or R, and has domain knowledge.
+SELECT candidate_id
+FROM candidates 
+WHERE (python = 'X' OR r_programming = 'X')
+  AND problem_solving IS NOT NULL
+  AND domain_knowledge IS NOT NULL
+ORDER BY candidate_id ASC;
+
+--use is not null to make it easy
+
+
+--Write a query to calculate Samantha’s total earnings based on the grants she has brought in.
+
+SELECT
+    30000 + (SUM(COALESCE(amount, 0)) * 0.05) AS Total_Earnings
+FROM
+    grant_money
+
+--The owner wants to know how many customers received that discount since they started the promotion.
+--Write a query to see how many customers received that discount.
+
+SELECT   count (customer_id)  FROM customers 
+  where age >= 65 or  total_purchase > 200 ;
